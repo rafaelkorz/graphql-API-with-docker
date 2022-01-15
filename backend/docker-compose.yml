@@ -1,0 +1,23 @@
+version: "3"
+
+services: 
+    dbmysql:
+        image: mysql:5.7
+        container_name: mysql
+        command: --default-authentication-plugin=mysql_native_password
+        environment:
+            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: waproject
+            MYSQL_USER: test
+            MYSQL_PASSWORD: test
+        restart: always
+        ports: ['3306:3306']
+    api:
+        build: .
+        image: node
+        container_name: nodejs
+        ports: ['3000:3000']
+        depends_on: 
+         - dbmysql
+        volumes:
+          - .:/var/www
