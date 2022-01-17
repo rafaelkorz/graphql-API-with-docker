@@ -1,4 +1,4 @@
-import { GraphQLID, GraphQLString } from "graphql";
+import { GraphQLID, GraphQLInt, GraphQLString } from "graphql";
 import { UserType } from "../TypeDefs/User";
 import { MessageType } from "../TypeDefs/Messages";
 import { Students } from "../../Entities/Students";
@@ -20,7 +20,7 @@ export const CREATE_STUDENT = {
 export const UPDATE_STUDENT = {
   type: MessageType,
   args: {
-    id: { type: GraphQLID },
+    id: { type: GraphQLInt },
     name: { type: GraphQLString },
     cpf: { type: GraphQLString },
     email: { type: GraphQLString },
@@ -53,7 +53,7 @@ export const UPDATE_STUDENT = {
 export const DELETE_STUDENT = {
     type: MessageType,
   args: {
-    id: { type: GraphQLID },
+    id: { type: GraphQLInt },
   },
   async resolve(parent: any, args: any) {
     const id = args.id;

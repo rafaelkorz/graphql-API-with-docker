@@ -1,7 +1,12 @@
-FROM node
-COPY . /var/www
+FROM node:alpine
+
 WORKDIR /var/www
-COPY . .
+
+COPY package.json ./
 RUN npm install
-EXPOSE 3000
+
+COPY . .
+
+EXPOSE 3002
+
 CMD ["npm", "start"]
