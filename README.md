@@ -6,6 +6,6 @@
 - Na raiz do projeto **".../graphql-API-with-docker"** execute o comando <br>
 ```docker-compose up```
 
-- Tela principal do sistema, para cadastro de estudantes, visualização e filtros.
+- Tela principal do sistema para cadastro de estudantes, visualização e filtros.
 
 <img src="./frontend/.github/projectStundents.jpg" />
