@@ -4,7 +4,6 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import {Route , BrowserRouter , Switch} from 'react-router-dom'
 
 import "./App.css";
-// import CreateUser from "./Components/CreateUser";
 import ListStudents from "./Components/ListStudents";
 import NewStudent from "./Components/NewStudent";
 
