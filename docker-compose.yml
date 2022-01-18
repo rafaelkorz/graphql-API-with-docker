@@ -12,6 +12,8 @@ services:
             MYSQL_PASSWORD: test
         restart: always
         ports: ['3306:3306']
+        networks:
+          - app-tier        
     api:
         build:
             context: backend
@@ -21,16 +23,27 @@ services:
         depends_on: 
           - dbmysql
         volumes:
-          - .:/backend
+          - './backend:/var/www'
           - /backend/node_modules
+        networks:
+          - app-tier          
     react-app:      
-      stdin_open: true   
-      build:
-        context: frontend
-        dockerfile: Dockerfile
-      ports: ['3000:3000']
-      depends_on: 
-        - api
-      volumes:
-        - '.:/frontend'
-        - '/frontend/node_modules'
+        stdin_open: true  
+        container_name: react-app        
+        environment:
+            CHOKIDAR_USEPOLLING: "true"
+        build:
+          context: frontend
+          dockerfile: Dockerfile
+        ports: ['3000:3000']
+        depends_on: 
+          - api
+        volumes:
+          - './frontend:/usr/app'
+          - '/frontend/node_modules'
+        networks:
+          - app-tier        
+        
+networks:
+  app-tier:
+    driver: bridge
