@@ -13,6 +13,8 @@ export const GET_STUDENTS = {
   resolve(parent: any, args: any) {
     const { name, cpf, email } = args;
 
+    console.log(args)
+
     if (name) {
       return Students.createQueryBuilder()    
       .where('name like :name', { name: `%${name}%` })
@@ -59,8 +61,6 @@ export const GET_STUDENTS = {
       .orWhere('cpf = like :cpf', { cpf: `%${cpf}%` })
       .getMany()
     }
-
-    return Students.find();
 
     return Students.find();
   },

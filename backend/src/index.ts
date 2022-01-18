@@ -8,7 +8,7 @@ import { Students } from "./Entities/Students";
 const main = async () => {
   await createConnection({
     type: "mysql",
-    host: "locahost",
+    host: "dbmysql",
     port: 3306,
     database: "waproject",
     username: "root",
@@ -17,6 +17,7 @@ const main = async () => {
     synchronize: true,
     entities: [Students],
   });
+
 
   const app = express();
   app.use(cors());
@@ -29,7 +30,7 @@ const main = async () => {
     })
   );
 
-  app.listen(3002, '0.0.0.0',  () => {
+  app.listen(3002,  () => {
     console.log("SERVER RUNNING ON PORT 3002");
   });
 };
