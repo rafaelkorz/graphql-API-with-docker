@@ -8,4 +8,4 @@
 
 - Tela principal do sistema, para cadastro de estudantes, visualização e filtros.
 
-<img src="./.github/projectStundents.jpg" />
+<img src="./frontend/.github/projectStundents.jpg" />
