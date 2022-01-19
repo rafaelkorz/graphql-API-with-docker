@@ -3,10 +3,10 @@
 - Clonar projeto para máquina local <br>
 ```https://github.com/rafaelkorz/graphql-API-with-docker.git```
 
-- Entrar na pasta backend e executa o comando abaixo <br>
+- Entrar na pasta **backend** e executa o comando abaixo <br>
 ```npm install```
 
-- Entrar na pasta frontend e executa o comando abaixo <br>
+- Entrar na pasta **frontend** e executa o comando abaixo <br>
 ```npm install```
 
 - Voltar na raiz do projeto **".../graphql-API-with-docker"** execute o comando <br>
